@@ -3,7 +3,14 @@
     {
       "id": 1,
       "title": "json-server",
-      "author": "typicode"
+      "author": "typicode",
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 2,
+      "title": "json-server",
+      "author": "typicode",
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
     }
   ],
   "comments": [
