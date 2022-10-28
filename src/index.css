@@ -17,3 +17,21 @@ main {
   overflow-y: hidden;
   border-right: 1px solid #dedede;
 }
+
+.rounded {
+  cursor: pointer;
+}
+
+.products-sort {
+  width:80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.active {
+  background-color: #d2f4ea;
+}
+.paginate-active {
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}
