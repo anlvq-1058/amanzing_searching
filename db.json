@@ -1,26 +1,122 @@
 {
-  "posts": [
+  "products": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode",
+      "name": "cáp sạc",
+      "category": 2,
+      "type": 1,
+      "price": 200,
+      "brand": 1,
       "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
     },
     {
       "id": 2,
-      "title": "json-server",
-      "author": "typicode",
+      "name": "laptop",
+      "category": 1,
+      "type": 1,
+      "price": 500,
+      "brand": 1,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 3,
+      "name": "laptop 1",
+      "category": 1,
+      "type": 1,
+      "price": 1000,
+      "brand": 2,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 4,
+      "name": "laptop 2",
+      "category": 1,
+      "type": 1,
+      "brand": 2,
+      "price": 500,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 5,
+      "name": "laptop 3",
+      "category": 1,
+      "type": 2,
+      "price": 20000,
+      "brand": 3,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 6,
+      "name": "laptop 4",
+      "category": 1,
+      "type": 2,
+      "price": 25000,
+      "brand": 3,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 7,
+      "name": "laptop 5",
+      "category": 1,
+      "type": 2,
+      "price": 250000,
+      "brand": 4,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 8,
+      "name": "laptop 6",
+      "category": 1,
+      "type": 2,
+      "price": 200000,
+      "brand": 4,
+      "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
+    },
+    {
+      "id": 9,
+      "name": "laptop 7",
+      "category": 1,
+      "type": 2,
+      "price": 150000,
+      "brand": 4,
       "image": "https://cdn-demo.algolia.com/bestbuy-0118/5588602_sb.jpg"
     }
   ],
-  "comments": [
+  "categories": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "title": "laptop"
+    },
+    {
+      "id": 2,
+      "title": "phụ kiện"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "types": [{
+    "id": 1,
+    "name": "type1"
+  },
+  {
+    "id": 2,
+    "name": "type2"
+  }],
+
+  "brands": [
+    {
+      "id": 1,
+      "name": "HP"
+    },
+    {
+      "id": 2,
+      "name": "Dell"
+    },
+    {
+      "id": 3,
+      "name": "Asus"
+    },
+    {
+      "id": 4,
+      "name": "Macbook"
+    }
+  ]
 }

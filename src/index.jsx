@@ -1,21 +1,15 @@
+import 'bootstrap/dist/css/bootstrap.css';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import SearchBar from './searchBar';
-import SideBar from './sideBar';
-import ProductTable from './productTable';
-import 'bootstrap/dist/css/bootstrap.css';
+import App from './App';
 
+import './index.css';
 require('bootstrap');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <SearchBar />
-    <main>
-      <SideBar />
-      <ProductTable />
-    </main>
+    <App />
   </React.StrictMode>
 );
 

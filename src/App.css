@@ -77,3 +77,7 @@ html {
 
 .fw-semibold { font-weight: 600; }
 .lh-tight { line-height: 1.25; }
+
+.bg-white{
+  width: 20%
+}
