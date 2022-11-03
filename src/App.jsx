@@ -19,59 +19,60 @@ function App() {
   const [selectedBrand, setSelectedBrand] = useState([])
   const debouncedSearchTerm = useDebounce(term, 500);
 
-  useEffect(() => {
-    const name = debouncedSearchTerm === '' ? '' : `name_like=${debouncedSearchTerm}&`;
-    const type = selectedTypes.length === 0 ? '' : typesPrameter(selectedTypes);
-    const category = selectedCategory.length === 0 ? '' : `category=${selectedCategory}&`;
-    const price = prices.length === 0 ? '' : `price_gte=${prices[0]}&price_lte=${prices[1]}&`;
-    const sort = `_sort=price&_order=${selectedSort}&`
-    const paginate = `_page=${selectedPage}&_limit=6&`
-    const brand = selectedBrand.length === 0 ? '' : `brand=${selectedBrand}&`
-    const url = 'http://localhost:3000/products?' + [name, type, category,  price,  sort,  brand, paginate].join('');
+  // useEffect(() => {
+  //   const name = debouncedSearchTerm === '' ? '' : `name_like=${debouncedSearchTerm}&`;
+  //   const type = selectedTypes.length === 0 ? '' : typesPrameter(selectedTypes);
+  //   const category = selectedCategory.length === 0 ? '' : `category=${selectedCategory}&`;
+  //   const price = prices.length === 0 ? '' : `price_gte=${prices[0]}&price_lte=${prices[1]}&`;
+  //   const sort = `_sort=price&_order=${selectedSort}&`
+  //   const paginate = `_page=${selectedPage}&_limit=6&`
+  //   const brand = selectedBrand.length === 0 ? '' : `brand=${selectedBrand}&`
+  //   const url = 'http://localhost:3000/products?' + [name, type, category,  price,  sort,  brand, paginate].join('');
+  //   fetch(url)
+  //   .then((res) => {
+  //     setTotalProduct(res.headers.get('x-total-count'))
+  //     return res.json()
+  //   }).then((products) => {
+  //     console.log(products);
+      
+  //     return setProducts(products)
+  //   })
+  // }, [
+  //   debouncedSearchTerm,
+  //   selectedTypes,
+  //   selectedCategory,
+  //   prices,
+  //   selectedSort,
+  //   selectedPage,
+  //   selectedBrand,
+  // ])
 
-    fetch(url)
-    .then((res) => {
-      setTotalProduct(res.headers.get('x-total-count'))
-      return res.json()
-    }).then((product) => {
-      setProducts(product)
-    })
-  }, [
-    debouncedSearchTerm,
-    selectedTypes,
-    selectedCategory,
-    prices,
-    selectedSort,
-    selectedPage,
-    selectedBrand,
-  ])
+  // useEffect(() => {
+  //   const url = 'http://localhost:3000/categories'
 
-  useEffect(() => {
-    const url = 'http://localhost:3000/categories'
+  //   fetch(url)
+  //   .then(res => res.json())
+  //   .then((categories) => {
+  //     setCategories(categories)})
+  // }, [])
 
-    fetch(url)
-    .then(res => res.json())
-    .then((categories) => {
-      setCategories(categories)})
-  }, [])
+  // useEffect(() => {
+  //   const url = 'http://localhost:3000/types'
 
-  useEffect(() => {
-    const url = 'http://localhost:3000/types'
+  //   fetch(url)
+  //   .then(res => res.json())
+  //   .then((types) => {
+  //     setTypes(types)})
+  // }, [])
 
-    fetch(url)
-    .then(res => res.json())
-    .then((types) => {
-      setTypes(types)})
-  }, [])
+  // useEffect(() => {
+  //   const url = 'http://localhost:3000/brands'
 
-  useEffect(() => {
-    const url = 'http://localhost:3000/brands'
-
-    fetch(url)
-    .then(res => res.json())
-    .then((brands) => {
-      setBrands(brands)})
-  }, [])
+  //   fetch(url)
+  //   .then(res => res.json())
+  //   .then((brands) => {
+  //     setBrands(brands)})
+  // }, [])
 
   
 

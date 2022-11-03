@@ -11,11 +11,11 @@ function BrandFilter({brands, setBrands, selectedBrand, setSelectedBrand, isActi
     setTerm(e.target.value)
   }
 
-  useEffect(()=>{
-    fetch(`http://localhost:3000/brands?name_like=${term}`)
-    .then(res => res.json())
-    .then(brands => {setBrands(brands)})
-  },[term])
+  // useEffect(()=>{
+  //   fetch(`http://localhost:3000/brands?name_like=${term}`)
+  //   .then(res => res.json())
+  //   .then(brands => {setBrands(brands)})
+  // },[term])
 
   return(
     <li className="mb-1">
