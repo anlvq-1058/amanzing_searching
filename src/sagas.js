@@ -1,17 +1,20 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
+import { fetchProductsSuccess, fetchProducts } from './redux/actions';
+import * as constant from './redux/constant';
 
 function usersFetch() {
+  
   const url = 'http://localhost:3000/products?'
-  fetch(url).then(res => res.json())
+  return fetch(url).then(res => res.json())
 }
 
 function* watchFetchProducts() {
   const products = yield call(usersFetch);
-  yield put({type: 'products/productList', products});
+  yield put(fetchProductsSuccess(products));
 }
 
 function* mySaga() {
-  yield takeEvery('products/productList', watchFetchProducts);
+  yield takeEvery(constant.FETCH_PRODUCT, watchFetchProducts);
 }
 
 export default mySaga;

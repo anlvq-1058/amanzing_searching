@@ -1,4 +1,3 @@
-export const productListSelector = (data=[]) => {
-  console.log(data.products)
+export const productListSelector = (data) => {
   return data.products
 }

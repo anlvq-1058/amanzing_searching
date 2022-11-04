@@ -2,16 +2,19 @@ import './product_table.css';
 import ProductItem from './productItem'
 import Pagination from './pagination';
 import { useDispatch, useSelector } from "react-redux";
-import { showProductList } from "./redux/actions";
+import { FETCH_PRODUCT, fetchProducts } from "./redux/actions";
 import { productListSelector } from "./redux/selectors";
 import { useEffect } from 'react';
 
 function ProductTable({totalProduct, setSelectedPage, selectedPage}) {
   const dispatch = useDispatch()
-  const productList = useSelector(productListSelector)
+  const productList = useSelector(state => {
+    console.log(state);
+    return state.products
+  })
 
   useEffect(() => {
-    dispatch(showProductList());
+    dispatch(fetchProducts());
   }, [dispatch])
 
   return (

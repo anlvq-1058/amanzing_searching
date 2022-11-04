@@ -1,3 +1,4 @@
+import { FETCH_PRODUCT, FETCH_PRODUCT_ERROR, FETCH_PRODUCT_SUCCESS } from './constant';
 const initState = {
   filters: {
     search: '',
@@ -7,10 +8,12 @@ const initState = {
     page: [],
     sort: 'asc'
   },
-  products: []
+  products: [],
+  loading: false
 }
 
 const rootReducer = (state = initState, action) => {
+  console.log({state, action});
   switch(action.type) {
     case 'filters/searchByName':
       return {
@@ -20,17 +23,22 @@ const rootReducer = (state = initState, action) => {
           search: action.payload
         }
       }
-    case 'products/productList':
+    case FETCH_PRODUCT:
       return {
         ...state,
-        products: [
-          ...state.products,
-          action.payload
-        ]
+        loading: true
+      }
+    case FETCH_PRODUCT_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        products: action.payload
       }
 
     default: 
-      return state;
+      return {
+        ...state
+      };
   }
 }
 

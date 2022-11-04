@@ -47,32 +47,32 @@ function App() {
   //   selectedBrand,
   // ])
 
-  // useEffect(() => {
-  //   const url = 'http://localhost:3000/categories'
+  useEffect(() => {
+    const url = 'http://localhost:3000/categories'
 
-  //   fetch(url)
-  //   .then(res => res.json())
-  //   .then((categories) => {
-  //     setCategories(categories)})
-  // }, [])
+    fetch(url)
+    .then(res => res.json())
+    .then((categories) => {
+      setCategories(categories)})
+  }, [])
 
-  // useEffect(() => {
-  //   const url = 'http://localhost:3000/types'
+  useEffect(() => {
+    const url = 'http://localhost:3000/types'
 
-  //   fetch(url)
-  //   .then(res => res.json())
-  //   .then((types) => {
-  //     setTypes(types)})
-  // }, [])
+    fetch(url)
+    .then(res => res.json())
+    .then((types) => {
+      setTypes(types)})
+  }, [])
 
-  // useEffect(() => {
-  //   const url = 'http://localhost:3000/brands'
+  useEffect(() => {
+    const url = 'http://localhost:3000/brands'
 
-  //   fetch(url)
-  //   .then(res => res.json())
-  //   .then((brands) => {
-  //     setBrands(brands)})
-  // }, [])
+    fetch(url)
+    .then(res => res.json())
+    .then((brands) => {
+      setBrands(brands)})
+  }, [])
 
   
 

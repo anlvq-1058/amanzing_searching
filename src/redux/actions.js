@@ -1,5 +1,4 @@
-const GET_USERS_FETCH = 'products/productList';
-
+import * as constant from './constant';
 export const filterByName = (data) => {
   return {
     type: 'filters/searchByName',
@@ -7,8 +6,22 @@ export const filterByName = (data) => {
   }
 }
 
-export const showProductList = (data) => {
+export const fetchProducts = () => {
   return {
-    type: 'products/productList',
+    type: constant.FETCH_PRODUCT
+  }
+}
+
+export const fetchProductsSuccess = (payload) => {
+  return {
+    type: constant.FETCH_PRODUCT_SUCCESS,
+    payload,
+  }
+}
+
+export const fetchProductsError = (payload) => {
+  return {
+    type: constant.FETCH_PRODUCT_ERROR,
+    payload,
   }
 }
