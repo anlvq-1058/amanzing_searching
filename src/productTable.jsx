@@ -1,30 +1,44 @@
 import './product_table.css';
 import ProductItem from './productItem'
 import Pagination from './pagination';
+import { useDispatch, useSelector } from "react-redux";
+import { FETCH_PRODUCT, fetchProducts } from "./redux/actions";
+import { productListSelector } from "./redux/selectors";
+import { useEffect } from 'react';
 
-function ProductTable({products, totalProduct, setSelectedPage, selectedPage}) {
+function ProductTable({totalProduct, setSelectedPage, selectedPage}) {
+  const dispatch = useDispatch()
+  const productList = useSelector(state => {
+    console.log(state);
+    return state.products
+  })
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  }, [dispatch])
+
   return (
     <>
-    { products && products.length ? (
+    { productList && productList.length ? (
       <>
         <div className="table-product">
           <div className="album py-5 bg-light">
             <div className="container">
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {products.map((product) =>
+                {productList.map((product) =>
                   <ProductItem key={product.id} value={product} />
                 )}
               </div>
             </div>
           </div>
         </div>
-        <div className="row">
+        {/* <div className="row">
           <Pagination 
             totalProduct={totalProduct}
             setSelectedPage={setSelectedPage}
             selectedPage={selectedPage}
           />
-        </div>
+        </div> */}
       </>
       ) : (
         <>
